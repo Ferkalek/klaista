@@ -18,6 +18,12 @@ const io = new Server(server, {
   },
 });
 
+app.use("/assets", express.static(__dirname + "/assets"));
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
+});
+
 app.get("/getKey", (req, res) => {
   const key = uuidv4();
   res.json({ key });
