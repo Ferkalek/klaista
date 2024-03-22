@@ -1,0 +1,62 @@
+<div class="notification" [ngClass]="{ active: isShowMessage$ | async }">
+  <p>{{ message$ | async }}</p>
+  <button type="button" (click)="onClose()">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M6 18L18 6M6 6l12 12"
+      />
+    </svg>
+  </button>
+</div>
+
+<section class="toolbar">
+  <h1 class="title">Alista</h1>
+
+  <div *ngIf="isOwner$ | async" class="buttons-bar">
+    <button
+      class="btn-outline"
+      type="button"
+      title="Copy text"
+      (click)="onCopyList()"
+    >
+      <app-icon type="copy"></app-icon>
+    </button>
+    <button
+      class="btn-outline"
+      type="button"
+      title="Share list"
+      (click)="onCopyLink()"
+    >
+      <app-icon type="share"></app-icon>
+    </button>
+
+    <button
+      *ngIf="isShowReloadBtn$ | async"
+      class="btn-outline"
+      type="button"
+      title="Resend List"
+      [disabled]="isDisabledReloadBtn$ | async"
+      (click)="resendList()"
+    >
+      <app-icon type="reload"></app-icon>
+    </button>
+
+    <button
+      class="btn-outline"
+      type="button"
+      [attr.title]="(isEditable$ | async) ? 'Save Changes' : 'Add Item'"
+      [disabled]="(isEditable$ | async) && (addItemInvalid$ | async)"
+      (click)="onAddItem()"
+    >
+      <app-icon [type]="(isEditable$ | async) ? 'save' : 'plus'"></app-icon>
+    </button>
+  </div>
+</section>

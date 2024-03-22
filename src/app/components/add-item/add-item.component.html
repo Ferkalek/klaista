@@ -1,0 +1,9 @@
+<form *ngIf="isOwner$ | async" class="add-item-form" [formGroup]="form">
+  <input
+    [ngStyle]="{ display: (isEditable$ | async) ? 'block' : 'none' }"
+    type="text"
+    formControlName="item"
+    (keydown)="onKeydown($event)"
+    (blur)="onBlur()"
+  />
+</form>

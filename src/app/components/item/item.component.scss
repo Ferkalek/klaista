@@ -1,0 +1,47 @@
+@import "../../../assets/styles/variables.scss";
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+  box-shadow: 0 3px 6px -3px rgba(0, 0, 0, 0.1),
+    0 2px 4px -4px rgba(0, 0, 0, 0.1);
+  border: 1px solid $color-border-gray;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+}
+
+.text-field {
+  flex-grow: 1;
+
+  input[type="text"] {
+    width: 100%;
+    display: none;
+
+    &.visible-field {
+      display: block;
+    }
+  }
+
+  .checkbox {
+    width: 0;
+    display: none;
+    visibility: hidden;
+
+    &:checked {
+      & + label {
+        text-decoration: line-through;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  label {
+    display: inline-block;
+    width: 100%;
+    line-height: 1.5;
+    padding: 0.25rem 0;
+  }
+}

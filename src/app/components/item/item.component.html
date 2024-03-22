@@ -1,0 +1,57 @@
+<form *ngIf="form" [formGroup]="form" class="item">
+  <ng-container *ngIf="isOwner$ | async; else shortView">
+    <div class="text-field">
+      <input
+        #textField
+        [class.visible-field]="isEditMode"
+        type="text"
+        formControlName="text"
+        (keydown)="onKeydown($event)"
+        (blur)="onSave()"
+      />
+      <ng-container *ngIf="!isEditMode">
+        <input
+          class="checkbox"
+          [attr.id]="id?.value"
+          type="checkbox"
+          formControlName="status"
+          (change)="onSelect()"
+        />
+        <label [attr.for]="id?.value">{{ text?.value }}</label>
+      </ng-container>
+    </div>
+    <button
+      *ngIf="!isEditMode"
+      class="icon-btn"
+      type="button"
+      (click)="changeOnEditMode(textField)"
+    >
+      <app-icon type="edit"></app-icon>
+    </button>
+    <button
+      *ngIf="isEditMode"
+      class="icon-btn"
+      type="button"
+      [disabled]="form.invalid"
+      (click)="onSave()"
+    >
+      <app-icon type="save"></app-icon>
+    </button>
+    <button class="icon-btn" type="button" (click)="onDelete()">
+      <app-icon type="delete"></app-icon>
+    </button>
+  </ng-container>
+
+  <ng-template #shortView>
+    <div class="text-field">
+      <input
+        class="checkbox"
+        [attr.id]="id?.value"
+        type="checkbox"
+        formControlName="status"
+        (change)="onSelect()"
+      />
+      <label [attr.for]="id?.value">{{ text?.value }}</label>
+    </div>
+  </ng-template>
+</form>

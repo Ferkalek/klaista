@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+
+  span {
+    display: flex;
+    overflow: hidden;
+    height: 24px;
+    width: 24px;
+
+    svg {
+      height: inherit;
+      width: inherit;
+    }
+  }
+}
