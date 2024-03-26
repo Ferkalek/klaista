@@ -1,4 +1,3 @@
-import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { environment } from './environments/environment';
@@ -7,10 +6,6 @@ import { setConfig, setListId, setKey } from './app/common/app-config';
 // https://sudobird.com/blog/tech/mdx/fetch-and-load-configuration-before-angular-starts
 
 async function initialize() {
-  if (environment.production) {
-    enableProdMode();
-  }
-
   const appModuleContainer = await import('./app/app.module');
   platformBrowserDynamic()
     .bootstrapModule(appModuleContainer.AppModule)

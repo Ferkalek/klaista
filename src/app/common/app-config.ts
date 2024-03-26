@@ -1,5 +1,5 @@
 import { SocketIoConfig } from 'ngx-socket-io';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 
 let socketIoConfig: SocketIoConfig = { url: environment.baseUrl };
 let listId: string = '';

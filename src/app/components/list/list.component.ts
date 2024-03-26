@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MainService } from '../../service/main.service';
-import { IItem } from 'src/app/interfaces/list.interface';
+import { IItem } from '../../interfaces/list.interface';
 
 @Component({
   selector: 'app-list',
