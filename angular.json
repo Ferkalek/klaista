@@ -34,7 +34,6 @@
               "src/favicon.ico",
               "src/assets",
               "src/browserconfig.xml",
-              "src/pwabuilder-sw.js",
               "src/manifest.json"
             ],
             "styles": ["src/styles.scss"],
@@ -92,7 +91,6 @@
               "src/favicon.ico",
               "src/assets",
               "src/browserconfig.xml",
-              "src/pwabuilder-sw.js",
               "src/manifest.json"
             ],
             "styles": ["src/styles.scss"],

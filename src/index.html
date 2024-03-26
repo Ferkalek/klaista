@@ -64,35 +64,6 @@
     />
     <meta name="msapplication-config" content="none" />
 
-    <script type="module">
-      import "https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate";
-      const el = document.createElement("pwa-update");
-      document.body.appendChild(el);
-    </script>
-
-    <script>
-      let = deferredPrompt = null;
-      window.addEventListener("beforeinstallprompt", (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-      });
-
-      function install() {
-        if (deferredPrompt) {
-          deferredPrompt.prompt();
-          deferredPrompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === "accepted") {
-              console.log("PWA has been installed");
-            } else {
-              console.log("User choised to not installed PWA");
-            }
-
-            deferredPrompt = null;
-          });
-        }
-      }
-    </script>
-
     <style>
       #loader {
         position: fixed;
