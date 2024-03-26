@@ -19,7 +19,7 @@
     "@angular/forms": "^14.1.0",
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
-    "@angular/pwa": "^0.5.3",
+    "@angular/pwa": "^0.0.1",
     "@angular/router": "^14.1.0",
     "@angular/service-worker": "^14.3.0",
     "concurrently": "^8.2.2",
