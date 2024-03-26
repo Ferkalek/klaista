@@ -33,7 +33,9 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/manifest.webmanifest"
+              "src/browserconfig.xml",
+              "src/pwabuilder-sw.js",
+              "src/manifest.json"
             ],
             "styles": ["src/styles.scss"],
             "scripts": []
@@ -52,8 +54,7 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all",
-              "serviceWorker": "ngsw-config.json"
+              "outputHashing": "all"
             },
             "development": {
               "optimization": false,
@@ -90,7 +91,9 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/manifest.webmanifest"
+              "src/browserconfig.xml",
+              "src/pwabuilder-sw.js",
+              "src/manifest.json"
             ],
             "styles": ["src/styles.scss"],
             "scripts": []
