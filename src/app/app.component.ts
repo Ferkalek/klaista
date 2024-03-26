@@ -23,6 +23,8 @@ export class AppComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    document.getElementById('loader')?.remove();
+
     this.socketService
       .getMessage('listFromOwner')
       .pipe(takeUntil(this.unsubscribe$))

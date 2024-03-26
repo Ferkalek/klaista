@@ -14,6 +14,7 @@ import { ItemComponent } from './components/item/item.component';
 import { IconComponent } from './components/icon/icon.component';
 import { getConfig } from './common/app-config';
 import { AddItemComponent } from './components/add-item/add-item.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AddItemComponent } from './components/add-item/add-item.component';
     ItemComponent,
     IconComponent,
     AddItemComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
