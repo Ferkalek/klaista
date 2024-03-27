@@ -7,7 +7,9 @@
     "start:frontend": "ng serve --proxy-config proxy.conf.json",
     "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
     "build": "ng build",
+    "build:prod": "npm run build --configurations=production",
     "watch": "ng build --watch --configuration development",
+    "check": "npx http-server -p 8080 -c-1 dist/alista/browser",
     "test": "ng test"
   },
   "private": true,
